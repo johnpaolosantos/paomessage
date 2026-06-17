@@ -3,21 +3,22 @@ import Message from "../models/message.model.js";
 import { hasImageKitConfig, uploadChatMedia } from "../lib/imagekit.js";
 import { getReceiverSocketId, io } from "../lib/socket.js";
 
-export async function getUsersForSidebar() {
+export async function getUsersForSidebar(req, res) {
     try {
         const loggedInUserId = req.user._id;
 
         const filteredUsers = await User.find({
             _id: { $ne: loggedInUserId },
         }).select("-clerkId");
+
         res.status(200).json(filteredUsers);
     } catch (error) {
-        console.error("Error in sendMessage:", error.message);
+        console.error("Error in getUsersForSidebar:", error.message);
         res.status(500).json({ message: "Internal server error" });
     }
 }
 
-export async function getConversationsForSidebar() {
+export async function getConversationsForSidebar(req, res) {
     try {
         const loggedInUserId = req.user._id;
 
@@ -69,7 +70,7 @@ export async function getConversationsForSidebar() {
     }
 }
 
-export async function getMessages() {
+export async function getMessages(req, res) {
     try {
         const { id: userToChatId } = req.params;
         const myId = req.user._id;
