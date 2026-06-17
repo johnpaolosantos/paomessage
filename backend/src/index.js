@@ -11,7 +11,9 @@ import { clerkMiddleware } from "@clerk/express";
 import User from "./models/user.model.js";
 import { connectDB } from "./lib/db.js";
 import job from "./lib/cron.js";
-import clerkWebhooks from "./webhooks/clerk.webhooks.js";
+
+import clerkWebhook from "./webhooks/clerk.webhook.js";
+
 
 
 const app = express();
@@ -20,7 +22,7 @@ const FRONTEND_URL = process.env.FRONTEND_URL;
 
 const publicDir = path.join(process.cwd(), "public");
 
-app.use("/api/webhooks/clerk", express.raw({type: "application/json"}), clerkWebhooks);
+app.use("/api/webhooks/clerk", express.raw({type: "application/json"}), clerkWebhook);
 
 // Middlewares
 app.use(express.json());
