@@ -8,7 +8,9 @@ import { useAuth } from "@clerk/react";
 
 function App() {
     const { isSignedIn, isLoaded } = useAuth();
-
+    if (!isLoaded) {
+        return <p>Loading....</p>;
+    }
     return (
         <ThemeProvider>
             <WallpaperProvider>
