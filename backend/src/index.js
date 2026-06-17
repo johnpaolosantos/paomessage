@@ -14,8 +14,6 @@ import job from "./lib/cron.js";
 
 import clerkWebhook from "./webhooks/clerk.webhook.js";
 
-import fs from "fs";
-import path from "path";
 
 const app = express();
 const PORT = process.env.PORT;
