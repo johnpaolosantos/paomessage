@@ -1,5 +1,7 @@
 # PaoMessage
 
+Deployed: https://paomessage.onrender.com
+
 A real-time messaging application built with React and Express.js, featuring live chat, user authentication, and image sharing capabilities.
 
 ## 🚀 Features
@@ -16,6 +18,7 @@ A real-time messaging application built with React and Express.js, featuring liv
 ## 🛠️ Tech Stack
 
 ### Backend
+
 - **Framework**: Express.js 5.2
 - **Database**: MongoDB (Mongoose ODM)
 - **Real-time**: Socket.io 4.8
@@ -25,6 +28,7 @@ A real-time messaging application built with React and Express.js, featuring liv
 - **Environment**: Node.js 22
 
 ### Frontend
+
 - **Framework**: React 19 + Vite
 - **Styling**: Tailwind CSS 4 + HeroUI
 - **State Management**: Zustand
@@ -46,6 +50,7 @@ A real-time messaging application built with React and Express.js, featuring liv
 ## ⚙️ Installation & Setup
 
 ### 1. Clone the Repository
+
 ```bash
 git clone <repository-url>
 cd paomessage
@@ -54,6 +59,7 @@ cd paomessage
 ### 2. Environment Variables
 
 Create a `.env` file in the `backend` directory:
+
 ```env
 PORT=3000
 FRONTEND_URL=http://localhost:5173
@@ -72,12 +78,14 @@ IMAGEKIT_URL_ENDPOINT=your_imagekit_url_endpoint
 ```
 
 Create a `.env.local` file in the `frontend` directory (optional):
+
 ```env
 VITE_API_URL=http://localhost:3000
 VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
 ```
 
 ### 3. Backend Setup
+
 ```bash
 cd backend
 npm install
@@ -87,6 +95,7 @@ npm run dev
 The backend server will start on `http://localhost:3000`
 
 ### 4. Frontend Setup
+
 ```bash
 cd frontend
 npm install
@@ -100,12 +109,14 @@ The frontend application will start on `http://localhost:5173`
 ### Running Both Services
 
 **Terminal 1 - Backend:**
+
 ```bash
 cd backend
 npm run dev
 ```
 
 **Terminal 2 - Frontend:**
+
 ```bash
 cd frontend
 npm run dev
@@ -114,12 +125,14 @@ npm run dev
 ### Available Commands
 
 **Backend:**
+
 - `npm run dev` - Start development server with auto-reload
 - `npm start` - Start production server
 - `npm run build` - Build for production
 - `npm run db:seed` - Seed database with initial users
 
 **Frontend:**
+
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run lint` - Run ESLint
@@ -183,12 +196,14 @@ paomessage/
 ## 🔌 API Endpoints
 
 ### Authentication Routes (`/api/auth`)
+
 - `POST /signup` - Register new user
 - `POST /login` - Login user
 - `POST /logout` - Logout user
 - `GET /profile` - Get user profile
 
 ### Message Routes (`/api/messages`)
+
 - `GET /` - Get all conversations
 - `GET /:conversationId` - Get messages in conversation
 - `POST /` - Send new message
@@ -197,6 +212,7 @@ paomessage/
 ## 🔒 Authentication
 
 The application uses Clerk for secure authentication:
+
 - Sign up with email
 - Automatic user creation and profile setup
 - Session management
@@ -205,6 +221,7 @@ The application uses Clerk for secure authentication:
 ## 📱 Key Components
 
 ### Frontend
+
 - **ChatPage**: Main messaging interface
 - **AuthPage**: Authentication screens
 - **ChatSidebar**: Conversation list with user indicators
@@ -214,6 +231,7 @@ The application uses Clerk for secure authentication:
 - **WallpaperPicker**: Background customization
 
 ### Backend
+
 - **Authentication Controller**: User registration and login
 - **Message Controller**: Message sending and retrieval
 - **Socket.io Handler**: Real-time events and online status
@@ -222,6 +240,7 @@ The application uses Clerk for secure authentication:
 ## 🔄 Real-time Features
 
 Socket.io events handled:
+
 - `connect` - User connects to chat
 - `disconnect` - User disconnects
 - `send-message` - New message sent
@@ -233,46 +252,52 @@ Socket.io events handled:
 ## 🎨 Customization
 
 ### Themes
+
 Available HeroUI theme presets in `frontend/src/data/herouiThemePresets.js`
 
 ### Wallpapers
+
 Custom wallpapers can be added to `frontend/public/wallpapers/`
 
 ## 🐛 Troubleshooting
 
 ### Connection Issues
+
 - Ensure both backend and frontend are running
 - Check environment variables are correctly set
 - Verify MongoDB connection string
 
 ### Socket.io Connection Failed
+
 - Check CORS configuration matches your frontend URL
 - Verify firewall isn't blocking connections
 - Check browser console for specific error messages
 
 ### ImageKit Upload Issues
+
 - Verify ImageKit credentials are correct
 - Check file size doesn't exceed limits
 - Ensure file format is supported
 
 ## 📝 Environment Configuration
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| PORT | Yes | Backend server port (default: 3000) |
-| FRONTEND_URL | Yes | Frontend URL for CORS |
-| MONGO_URI | Yes | MongoDB connection string |
-| CLERK_SECRET_KEY | Yes | Clerk secret key |
-| CLERK_PUBLISHABLE_KEY | Yes | Clerk publishable key |
-| IMAGEKIT_PUBLIC_KEY | Yes | ImageKit public key |
-| IMAGEKIT_PRIVATE_KEY | Yes | ImageKit private key |
-| IMAGEKIT_URL_ENDPOINT | Yes | ImageKit URL endpoint |
+| Variable              | Required | Description                         |
+| --------------------- | -------- | ----------------------------------- |
+| PORT                  | Yes      | Backend server port (default: 3000) |
+| FRONTEND_URL          | Yes      | Frontend URL for CORS               |
+| MONGO_URI             | Yes      | MongoDB connection string           |
+| CLERK_SECRET_KEY      | Yes      | Clerk secret key                    |
+| CLERK_PUBLISHABLE_KEY | Yes      | Clerk publishable key               |
+| IMAGEKIT_PUBLIC_KEY   | Yes      | ImageKit public key                 |
+| IMAGEKIT_PRIVATE_KEY  | Yes      | ImageKit private key                |
+| IMAGEKIT_URL_ENDPOINT | Yes      | ImageKit URL endpoint               |
 
 ## 🚢 Deployment
 
 ### Production Build
 
 **Backend:**
+
 ```bash
 cd backend
 npm run build
@@ -280,12 +305,14 @@ npm start
 ```
 
 **Frontend:**
+
 ```bash
 cd frontend
 npm run build
 ```
 
 ### Cloud Deployment Options
+
 - **Vercel**: Frontend deployment (Vite SPA)
 - **Render/Railway**: Backend deployment
 - **MongoDB Atlas**: Cloud database
@@ -305,6 +332,7 @@ ISC
 ## 📞 Support
 
 For issues and questions, please check:
+
 - Existing issues on the repository
 - Clerk documentation: https://clerk.com/docs
 - ImageKit documentation: https://imagekit.io/docs
