@@ -1,5 +1,5 @@
 function ChatPage() {
-    return <div>ChatPage</div>;
+    return <div>hehe</div>;
 }
 
 export default ChatPage;
